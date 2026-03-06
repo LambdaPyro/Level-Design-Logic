@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://djlimphxa38ty"]
+
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/scripts/input_output.gd" id="1_43m5a"]
+[ext_resource type="Script" uid="uid://cwhulihefocmf" path="res://addons/Level-Design-Logic/scripts/example/test_functions.gd" id="1_g03u2"]
+[ext_resource type="PackedScene" uid="uid://both5v57iysds" path="res://addons/Level-Design-Logic/scenes/Output.tscn" id="3_xr41k"]
+[ext_resource type="Script" uid="uid://dcpdr0h48d84e" path="res://addons/Level-Design-Logic/scripts/output.gd" id="4_8fy8a"]
+
+[node name="ExInputOutput" type="Node3D" unique_id=1342982674]
+script = ExtResource("1_g03u2")
+
+[node name="InputOutput" type="Node3D" parent="." unique_id=239659725]
+script = ExtResource("1_43m5a")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" type="Node" parent="InputOutput" unique_id=351863830 instance=ExtResource("3_xr41k")]
+script = ExtResource("4_8fy8a")
