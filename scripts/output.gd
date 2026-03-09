@@ -9,7 +9,7 @@ signal output_triggered
 signal continue_logic
 
 ## How long the [Output] should wait before sending signals.
-@export_custom(PROPERTY_HINT_NONE, "suffix: Seconds") var delay : float = 0:
+@export_range(0.0, 60.0,0.1, "suffix: Seconds", "or_greater") var delay : float = 0:
 	set(val):
 		delay = val
 		notify_property_list_changed()
@@ -28,11 +28,11 @@ func _ready() -> void:
 func run_output() -> void:
 	var input_output = get_parent()
 	
-	if delay != 0:
+	if delay > 0:
 		print_rich("[i]" + name + ": awaiting delay[/i]")
 		await get_tree().create_timer(delay).timeout
 		print(name + ": delay finished")
 	
 	output_triggered.emit()
 	
-	if delay_next_output: emit_signal("continue_logic")
+	if delay_next_output and delay > 0: emit_signal("continue_logic")
