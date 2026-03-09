@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ywpk3ytvjuqp"]
+
+[ext_resource type="Texture2D" uid="uid://bmqe3hk5y3hle" path="res://addons/Level-Design-Logic/images/TriggerTexture.svg" id="1_1j8tv"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.8627451)
+albedo_texture = ExtResource("1_1j8tv")
+uv1_triplanar = true
