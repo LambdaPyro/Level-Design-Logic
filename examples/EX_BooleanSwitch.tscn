@@ -9,19 +9,19 @@
 script = ExtResource("1_pgdxk")
 
 [node name="BooleanSwitch" type="Node3D" parent="." unique_id=1274863412]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_pq25h")
 metadata/_custom_type_script = "uid://bk3calvm51l3g"
 
 [node name="True_IO" type="Node3D" parent="." unique_id=1845999709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 script = ExtResource("3_cn35k")
 metadata/_custom_type_script = "uid://vbh3bllj15wb"
 
 [node name="Output_0" parent="True_IO" unique_id=351863830 instance=ExtResource("4_oucie")]
 
 [node name="False_IO" type="Node3D" parent="." unique_id=709057038]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 script = ExtResource("3_cn35k")
 run_once = true
 metadata/_custom_type_script = "uid://vbh3bllj15wb"
