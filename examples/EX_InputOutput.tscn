@@ -8,6 +8,7 @@
 script = ExtResource("1_g03u2")
 
 [node name="InputOutput" type="Node3D" parent="." unique_id=239659725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
 script = ExtResource("1_43m5a")
 metadata/_custom_type_script = "uid://vbh3bllj15wb"
 
@@ -26,6 +27,7 @@ delay_next_output = true
 [node name="Output_3" parent="InputOutput" unique_id=1095203535 instance=ExtResource("3_xr41k")]
 
 [node name="InputOutputSingle" type="Node3D" parent="." unique_id=239138824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001262188, 2.0040643, 1.9878261)
 script = ExtResource("1_43m5a")
 metadata/_custom_type_script = "uid://vbh3bllj15wb"
 

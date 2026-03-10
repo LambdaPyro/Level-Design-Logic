@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csmikqph00s71"
-path.s3tc="res://.godot/imported/Counter.svg-6a89057005cfa8f32a25eba17581b9e8.s3tc.ctex"
+uid="uid://d1o1rh37ue335"
+path.s3tc="res://.godot/imported/Counter-Gizmo.svg-6735f93bdb9ce4e35fa92c3f1824622b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Level-Design-Logic/images/Counter.svg"
-dest_files=["res://.godot/imported/Counter.svg-6a89057005cfa8f32a25eba17581b9e8.s3tc.ctex"]
+source_file="res://addons/Level-Design-Logic/images/Counter-Gizmo.svg"
+dest_files=["res://.godot/imported/Counter-Gizmo.svg-6735f93bdb9ce4e35fa92c3f1824622b.s3tc.ctex"]
 
 [params]
 

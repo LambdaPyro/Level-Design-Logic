@@ -12,6 +12,7 @@ func _has_gizmo(node):
 func _redraw(gizmo: EditorNode3DGizmo) -> void:
 	gizmo.clear()
 	var trigger = gizmo.get_node_3d()
+	
 	if trigger is CollisionShape3D:
 		var new_mesh := BoxMesh.new()
 		new_mesh.size = trigger.shape.size
