@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bwtd2kk2osa8l"]
+
+[ext_resource type="Texture2D" uid="uid://dcwjmq82dw0yu" path="res://addons/Level-Design-Logic/images/InteractTexture.svg" id="1_rw86n"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.8627451)
+albedo_texture = ExtResource("1_rw86n")
+uv1_triplanar = true

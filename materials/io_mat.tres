@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dl0xt0ncb1lag"]
+
+[ext_resource type="Texture2D" uid="uid://dnc5c52p1ks2b" path="res://addons/Level-Design-Logic/LDL.svg" id="1_t1phq"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_t1phq")
+billboard_mode = 1

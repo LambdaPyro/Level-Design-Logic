@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://both5v57iysds"]
+
+[ext_resource type="Script" uid="uid://dcpdr0h48d84e" path="res://addons/Level-Design-Logic/scripts/output.gd" id="1_4fse4"]
+
+[node name="Output" type="Node" unique_id=351863830]
+script = ExtResource("1_4fse4")

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://j4312ka71n58"]
+
+[ext_resource type="Script" uid="uid://by4866dhbyiu" path="res://addons/Level-Design-Logic/scripts/tests/BS_Test.gd" id="1_pgdxk"]
+[ext_resource type="Script" uid="uid://bk3calvm51l3g" path="res://addons/Level-Design-Logic/scripts/boolean_switch.gd" id="1_pq25h"]
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/scripts/input_output.gd" id="3_cn35k"]
+[ext_resource type="PackedScene" uid="uid://both5v57iysds" path="res://addons/Level-Design-Logic/scenes/Output.tscn" id="4_oucie"]
+
+[node name="ExBooleanSwitch" type="Node3D" unique_id=600594272]
+script = ExtResource("1_pgdxk")
+
+[node name="BooleanSwitch" type="Node3D" parent="." unique_id=1274863412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_pq25h")
+metadata/_custom_type_script = "uid://bk3calvm51l3g"
+
+[node name="True_IO" type="Node3D" parent="." unique_id=1845999709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+script = ExtResource("3_cn35k")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="True_IO" unique_id=351863830 instance=ExtResource("4_oucie")]
+
+[node name="False_IO" type="Node3D" parent="." unique_id=709057038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+script = ExtResource("3_cn35k")
+run_once = true
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="False_IO" unique_id=1752324303 instance=ExtResource("4_oucie")]
+
+[connection signal="bool_changed" from="BooleanSwitch" to="." method="boolean_changed"]
+[connection signal="boolean_false_triggered" from="BooleanSwitch" to="False_IO" method="get_input"]
+[connection signal="boolean_true_triggered" from="BooleanSwitch" to="True_IO" method="get_input"]
+[connection signal="output_triggered" from="True_IO/Output_0" to="." method="test_boolean_true"]
+[connection signal="outputs_triggered" from="False_IO" to="BooleanSwitch" method="change_boolean_state" binds= [true, true]]
+[connection signal="output_triggered" from="False_IO/Output_0" to="." method="test_boolean_false"]

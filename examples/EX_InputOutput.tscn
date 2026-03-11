@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://djlimphxa38ty"]
+
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/scripts/input_output.gd" id="1_43m5a"]
+[ext_resource type="Script" uid="uid://cwhulihefocmf" path="res://addons/Level-Design-Logic/scripts/tests/IO_Test.gd" id="1_g03u2"]
+[ext_resource type="PackedScene" uid="uid://both5v57iysds" path="res://addons/Level-Design-Logic/scenes/Output.tscn" id="3_xr41k"]
+
+[node name="ExInputOutput" type="Node3D" unique_id=1342982674]
+script = ExtResource("1_g03u2")
+
+[node name="InputOutput" type="Node3D" parent="." unique_id=239659725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+script = ExtResource("1_43m5a")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput" unique_id=351863830 instance=ExtResource("3_xr41k")]
+editor_description = "Basic Output"
+
+[node name="Output_1" parent="InputOutput" unique_id=541647493 instance=ExtResource("3_xr41k")]
+editor_description = "Output with Delay"
+delay = 5.0
+
+[node name="Output_2" parent="InputOutput" unique_id=842132583 instance=ExtResource("3_xr41k")]
+editor_description = "Await Next Output (3) before finishing this one"
+delay = 10.0
+delay_next_output = true
+
+[node name="Output_3" parent="InputOutput" unique_id=1095203535 instance=ExtResource("3_xr41k")]
+
+[node name="InputOutputSingle" type="Node3D" parent="." unique_id=239138824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001262188, 2.0040643, 1.9878261)
+script = ExtResource("1_43m5a")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutputSingle" unique_id=2060092475 instance=ExtResource("3_xr41k")]
+
+[node name="Output_1" parent="InputOutputSingle" unique_id=1742023673 instance=ExtResource("3_xr41k")]
+
+[node name="Output_2" parent="InputOutputSingle" unique_id=2041455948 instance=ExtResource("3_xr41k")]
+
+[connection signal="outputs_triggered" from="InputOutput" to="InputOutputSingle" method="get_input" binds= [1]]
+[connection signal="output_triggered" from="InputOutput/Output_0" to="." method="test_output" binds= ["Output 0"]]
+[connection signal="output_triggered" from="InputOutput/Output_1" to="." method="test_output" binds= ["Output 1"]]
+[connection signal="output_triggered" from="InputOutput/Output_2" to="." method="test_output_delay_next" binds= ["Output 2"]]
+[connection signal="output_triggered" from="InputOutput/Output_3" to="." method="output_delayed"]
+[connection signal="output_triggered" from="InputOutput/Output_3" to="." method="test_output" binds= ["Output 3"]]
+[connection signal="output_triggered" from="InputOutputSingle" to="." method="IO_results"]
+[connection signal="output_triggered" from="InputOutputSingle/Output_0" to="." method="failure"]
+[connection signal="output_triggered" from="InputOutputSingle/Output_1" to="." method="test_output" binds= ["Single Output 1"]]
+[connection signal="output_triggered" from="InputOutputSingle/Output_2" to="." method="failure"]
