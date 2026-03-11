@@ -12,7 +12,6 @@ func _get_gizmo_name():
 
 func _has_gizmo(node):
 	var ldl_types = [InputOutput, BooleanSwitch, Trigger, Counter, Randomizer, Interactable]
-
 	for i in ldl_types:
 		if is_instance_of(node, i):
 			return true

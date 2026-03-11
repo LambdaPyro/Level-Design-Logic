@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/Trigger.svg")
+@icon("uid://cj6n58xdhx48c")
 @tool
 extends Area3D
 ## Area3D with better visualization, options to enable and disable types, and check if any node entering has the same name as a given string
