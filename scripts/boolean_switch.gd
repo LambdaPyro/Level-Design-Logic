@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/BooleanSwitch.svg")
+@icon("uid://cu3hrjfhstd1n")
 extends Node3D
 ## Logic Gate that holds a boolean value. This value determines what signal will be sent and allows for manual changing of said boolean
 

@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/Counter.svg")
+@icon("uid://csmikqph00s71")
 extends Node3D
 ## Can add or subtract to an internal integer, and send that integer to other nodes. Has a minimum and maximum value for unique cases.
 
