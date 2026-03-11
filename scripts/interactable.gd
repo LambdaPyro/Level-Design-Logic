@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/Interaction.svg")
+@icon("uid://cx4es3mcsm038")
 @tool
 extends Area3D
 ## Simple Input trigger for Level Design Logic. Intended for players to "interact" with scripted sequences

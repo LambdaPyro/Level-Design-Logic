@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/InputOutput.svg")
+@icon("uid://b6sju34gybl8c")
 @tool
 extends Node3D
 ## Series of Outputs that are run once an input is recieved.
@@ -22,7 +22,7 @@ var _did_run : bool = false
 
 var _last_output
 
-var _output : PackedScene = preload("res://addons/Level-Design-Logic/scenes/Output.tscn")
+var _output : PackedScene = preload("uid://both5v57iysds")
 func _create_output() -> void:
 	var new_output : Output = _output.instantiate()
 	var output_name = "Output_" + str(get_child_count())

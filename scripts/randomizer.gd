@@ -1,4 +1,4 @@
-@icon("res://addons/Level-Design-Logic/images/Random.svg")
+@icon("uid://i04g4yuxm6gy")
 extends Node3D
 ## Creates a random integer between a minimum and maximum value.
 class_name Randomizer
