@@ -8,6 +8,7 @@ const BsGizmo = preload("uid://cwx858yv0p1cw")
 const TrGizmo = preload("uid://dwr5px7egx4os")
 const CountGizmo = preload("uid://b1hnchixs27bv")
 const RandomGizmo = preload("uid://cy4mhsww8q3q5")
+const InteractableGizmo = preload("uid://bo7hr1n201imw")
 
 var connections_gizmo = ConnectionsGizmo.new()
 
@@ -16,6 +17,7 @@ var bs_gizmo = BsGizmo.new()
 var tr_gizmo = TrGizmo.new()
 var count_gizmo = CountGizmo.new()
 var random_gizmo = RandomGizmo.new()
+var interact_gizmo = InteractableGizmo.new()
 
 func _enable_plugin() -> void:
 	# Add autoloads here.
@@ -36,6 +38,7 @@ func _enter_tree() -> void:
 	add_node_3d_gizmo_plugin(tr_gizmo)
 	add_node_3d_gizmo_plugin(count_gizmo)
 	add_node_3d_gizmo_plugin(random_gizmo)
+	add_node_3d_gizmo_plugin(interact_gizmo)
 
 
 func _exit_tree() -> void:
@@ -47,3 +50,4 @@ func _exit_tree() -> void:
 	remove_node_3d_gizmo_plugin(tr_gizmo)
 	remove_node_3d_gizmo_plugin(count_gizmo)
 	remove_node_3d_gizmo_plugin(random_gizmo)
+	remove_node_3d_gizmo_plugin(interact_gizmo)

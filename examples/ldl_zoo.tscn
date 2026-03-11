@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bunkud6mwm8py"]
+
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/scripts/input_output.gd" id="1_22ui2"]
+[ext_resource type="Script" uid="uid://bk3calvm51l3g" path="res://addons/Level-Design-Logic/scripts/boolean_switch.gd" id="2_6t63x"]
+[ext_resource type="Script" uid="uid://b5erixrcl42o1" path="res://addons/Level-Design-Logic/scripts/counter.gd" id="3_pdimg"]
+[ext_resource type="Script" uid="uid://yisxscgyiatv" path="res://addons/Level-Design-Logic/scripts/randomizer.gd" id="4_oy1pl"]
+[ext_resource type="Script" uid="uid://n5g4lv1lcxbs" path="res://addons/Level-Design-Logic/scripts/trigger.gd" id="5_da0ju"]
+[ext_resource type="Script" uid="uid://osgsl2k8epeh" path="res://addons/Level-Design-Logic/scripts/interactable.gd" id="6_20kjb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7uxwa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s75kx"]
+
+[node name="LdlZoo" type="Node3D" unique_id=824027487]
+
+[node name="InputOutput" type="Node3D" parent="." unique_id=1899927827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+script = ExtResource("1_22ui2")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="BooleanSwitch" type="Node3D" parent="." unique_id=1183493831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4)
+script = ExtResource("2_6t63x")
+metadata/_custom_type_script = "uid://bk3calvm51l3g"
+
+[node name="Counter" type="Node3D" parent="." unique_id=797036362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
+script = ExtResource("3_pdimg")
+metadata/_custom_type_script = "uid://b5erixrcl42o1"
+
+[node name="Randomizer" type="Node3D" parent="." unique_id=1674281604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -4)
+script = ExtResource("4_oy1pl")
+metadata/_custom_type_script = "uid://yisxscgyiatv"
+
+[node name="Trigger" type="Area3D" parent="." unique_id=1712018779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -2)
+script = ExtResource("5_da0ju")
+metadata/_custom_type_script = "uid://n5g4lv1lcxbs"
+
+[node name="Collider" type="CollisionShape3D" parent="Trigger" unique_id=720413848]
+shape = SubResource("BoxShape3D_7uxwa")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=2100894027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4)
+script = ExtResource("6_20kjb")
+metadata/_custom_type_script = "uid://osgsl2k8epeh"
+
+[node name="Collider" type="CollisionShape3D" parent="Interactable" unique_id=1593951999]
+shape = SubResource("BoxShape3D_s75kx")
