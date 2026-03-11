@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i04g4yuxm6gy"
-path.s3tc="res://.godot/imported/Random.svg-d830e847c382dca5ad6f603714c868cb.s3tc.ctex"
+uid="uid://bqq2pksw03b3r"
+path.s3tc="res://.godot/imported/Random-Gizmo.svg-d4822836dd6e754e0a5fa45bdd86b604.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Level-Design-Logic/images/Random.svg"
-dest_files=["res://.godot/imported/Random.svg-d830e847c382dca5ad6f603714c868cb.s3tc.ctex"]
+source_file="res://addons/Level-Design-Logic/images/Random-Gizmo.svg"
+dest_files=["res://.godot/imported/Random-Gizmo.svg-d4822836dd6e754e0a5fa45bdd86b604.s3tc.ctex"]
 
 [params]
 
