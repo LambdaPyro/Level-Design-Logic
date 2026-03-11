@@ -11,7 +11,7 @@ func _get_gizmo_name():
 	return "Connections"
 
 func _has_gizmo(node):
-	var ldl_types = [InputOutput, BooleanSwitch, Trigger, Counter]
+	var ldl_types = [InputOutput, BooleanSwitch, Trigger, Counter, Randomizer]
 
 	for i in ldl_types:
 		if is_instance_of(node, i):
@@ -42,6 +42,7 @@ func _redraw(gizmo: EditorNode3DGizmo) -> void:
 			if node.get_object() is Node3D:
 				var target = node.get_object() as Node3D
 				end = node3d.to_local(target.global_position)
+				if(lines.has(end)): continue
 			else:
 				continue
 			
@@ -52,6 +53,6 @@ func _redraw(gizmo: EditorNode3DGizmo) -> void:
 			handles.push_back(end)
 	
 	if lines.size() == 0: return
-
+	
 	gizmo.add_lines(lines, CONNECTION_MAT, false)
 	gizmo.add_handles(handles, get_material("handles", gizmo), [])
