@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="LDL.svg" width="256" height="256">
+  <img src="addons/Level-Design-Logic/LDL.svg" width="256" height="256">
 
   <h1 align="center">Level-Design-Logic</h1>
 </div>
@@ -23,12 +23,12 @@ This project is inspired by logic_outputs found in the Hammer level editor for S
 </ol>
 <h2>Features</h2>
 <ul>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/images/BooleanSwitch-Gizmo.svg" height=24px> BooleanSwitch - Logic Gate that holds a boolean value (switch). This value determines what signal will be sent.</li>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/images/Counter-Gizmo.svg" height=24px> Counter - Can add or subtract to an internal integer, and send that integer to other nodes. Has a minimum and maximum value for unique cases.</li>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/LDL.svg" height=24px> InputOutput - Series of Outputs that are run once an input is recieved.</li>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/images/Interaction.svg" height=42px> Interactable - Simple Input trigger for Level Design Logic. Intended for players to "interact" with scripted sequences</li>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/images/Random-Gizmo.svg" height=20px> Randomizer - Creates a random integer between a minimum and maximum value.</li>
-  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/images/Trigger.svg" height=42px> Trigger - Area3D with better visualization, options to enable and disable types, and check if any node entering has the same name as a given string</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/images/BooleanSwitch-Gizmo.svg" height=24px> BooleanSwitch - Logic Gate that holds a boolean value (switch). This value determines what signal will be sent.</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/images/Counter-Gizmo.svg" height=24px> Counter - Can add or subtract to an internal integer, and send that integer to other nodes. Has a minimum and maximum value for unique cases.</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/LDL.svg" height=24px> InputOutput - Series of Outputs that are run once an input is recieved.</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/images/Interaction.svg" height=42px> Interactable - Simple Input trigger for Level Design Logic. Intended for players to "interact" with scripted sequences</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/images/Random-Gizmo.svg" height=20px> Randomizer - Creates a random integer between a minimum and maximum value.</li>
+  <li><img src="https://github.com/LambdaPyro/Level-Design-Logic/blob/dev/addons/Level-Design-Logic/images/Trigger.svg" height=42px> Trigger - Area3D with better visualization, options to enable and disable types, and check if any node entering has the same name as a given string</li>
 </ul>
 
 You can learn more on the official wiki: https://github.com/LambdaPyro/Level-Design-Logic/wiki

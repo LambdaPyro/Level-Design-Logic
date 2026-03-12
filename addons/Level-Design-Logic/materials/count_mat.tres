@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chxlleunke37t"]
+
+[ext_resource type="Texture2D" uid="uid://d1o1rh37ue335" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/images/Counter-Gizmo.svg" id="1_ql3si"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_ql3si")
+billboard_mode = 1

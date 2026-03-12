@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d03q5iygryw1b"]
+
+[ext_resource type="Script" uid="uid://osgsl2k8epeh" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/interactable.gd" id="1_ywxbp"]
+[ext_resource type="Script" uid="uid://bdpjxq7ara0we" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/tests/interact_test.gd" id="2_8gdxs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8gdxs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_uorfh"]
+sky_material = SubResource("ProceduralSkyMaterial_8gdxs")
+
+[sub_resource type="Environment" id="Environment_edpo3"]
+background_mode = 2
+sky = SubResource("Sky_uorfh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywxbp"]
+size = Vector3(1, 1.2, 1)
+
+[sub_resource type="GDScript" id="GDScript_ywxbp"]
+script/source = "extends CharacterBody3D
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		ray_cast_3d.get_interactable()
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gdxs"]
+radius = 0.30517578
+height = 1.6899414
+
+[node name="ExInteractable" type="Node3D" unique_id=474917461]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1380824416]
+environment = SubResource("Environment_edpo3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=93690205]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1992281199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 0)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ywxbp")
+metadata/_custom_type_script = "uid://osgsl2k8epeh"
+
+[node name="Collider" type="CollisionShape3D" parent="Interactable" unique_id=1810453075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100000024, 0)
+shape = SubResource("BoxShape3D_ywxbp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1461658933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15, 0.6, -2.9802322e-08)
+use_collision = true
+size = Vector3(0.7, 1.2, 0.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=451993973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(11, 1, 7)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=578928217]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = SubResource("GDScript_ywxbp")
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D" unique_id=1295340893]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 1, 0)
+target_position = Vector3(1, 0, 0)
+collision_mask = 4
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("2_8gdxs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=307924131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8449707, 0)
+shape = SubResource("CapsuleShape3D_8gdxs")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1769014969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3000001, 0)
+
+[connection signal="interacted" from="Interactable" to="CharacterBody3D/RayCast3D" method="interaction_test"]

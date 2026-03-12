@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cnn4vo80bpfmb"]
+
+[ext_resource type="Script" uid="uid://dvunp83aekvjv" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/tests/COUNT_Test.gd" id="1_06yvd"]
+[ext_resource type="Script" uid="uid://b5erixrcl42o1" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/counter.gd" id="1_fca47"]
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/input_output.gd" id="2_vhmpk"]
+[ext_resource type="PackedScene" uid="uid://both5v57iysds" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scenes/Output.tscn" id="3_06yvd"]
+
+[node name="EX_Counter" type="Node3D" unique_id=730330458]
+script = ExtResource("1_06yvd")
+
+[node name="Counter" type="Node3D" parent="." unique_id=418972268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.1411642)
+script = ExtResource("1_fca47")
+step = 2
+max = 10
+out_of_range = 1
+metadata/_custom_type_script = "uid://b5erixrcl42o1"
+
+[node name="InputOutput" type="Node3D" parent="." unique_id=831549679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+script = ExtResource("2_vhmpk")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput" unique_id=351863830 instance=ExtResource("3_06yvd")]
+
+[node name="Button" type="Button" parent="." unique_id=1002632779]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Trigger Addition"
+
+[node name="Button2" type="Button" parent="." unique_id=374160270]
+offset_top = 32.0
+offset_right = 157.0
+offset_bottom = 63.0
+text = "Trigger Subtraction"
+
+[connection signal="number_updated" from="Counter" to="." method="get_number"]
+[connection signal="output_triggered" from="InputOutput/Output_0" to="Counter" method="add"]
+[connection signal="pressed" from="Button" to="Counter" method="add"]
+[connection signal="pressed" from="Button2" to="Counter" method="subtract"]

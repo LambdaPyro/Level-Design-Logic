@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfffhh8asbscx"]
+
+[ext_resource type="Texture2D" uid="uid://bqhou0s7vpc28" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/images/BooleanSwitch-Gizmo.svg" id="1_foqk4"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_foqk4")
+billboard_mode = 1
