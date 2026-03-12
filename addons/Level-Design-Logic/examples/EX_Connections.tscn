@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bpreker7amgeh"]
+
+[ext_resource type="Script" uid="uid://vbh3bllj15wb" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scripts/input_output.gd" id="1_tbljr"]
+[ext_resource type="PackedScene" uid="uid://both5v57iysds" path="res://addons/Level-Design-Logic/addons/Level-Design-Logic/scenes/Output.tscn" id="2_61r5l"]
+
+[node name="ExConnections" type="Node3D" unique_id=733387529]
+
+[node name="InputOutput" type="Node3D" parent="." unique_id=54485263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput" unique_id=351863830 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput" unique_id=1926228152 instance=ExtResource("2_61r5l")]
+
+[node name="InputOutput2" type="Node3D" parent="." unique_id=707305788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput2" unique_id=1707176697 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput2" unique_id=715558981 instance=ExtResource("2_61r5l")]
+
+[node name="InputOutput3" type="Node3D" parent="." unique_id=1917977596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput3" unique_id=988078004 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput3" unique_id=329184739 instance=ExtResource("2_61r5l")]
+
+[node name="InputOutput4" type="Node3D" parent="." unique_id=1235986212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput4" unique_id=658337651 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput4" unique_id=122974813 instance=ExtResource("2_61r5l")]
+
+[node name="InputOutput5" type="Node3D" parent="." unique_id=768366529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput5" unique_id=118145850 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput5" unique_id=653552914 instance=ExtResource("2_61r5l")]
+
+[node name="InputOutput6" type="Node3D" parent="." unique_id=1727898290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+script = ExtResource("1_tbljr")
+metadata/_custom_type_script = "uid://vbh3bllj15wb"
+
+[node name="Output_0" parent="InputOutput6" unique_id=1310323162 instance=ExtResource("2_61r5l")]
+
+[node name="Output_1" parent="InputOutput6" unique_id=1083373329 instance=ExtResource("2_61r5l")]
+
+[connection signal="output_triggered" from="InputOutput/Output_0" to="InputOutput2" method="get_input"]
+[connection signal="output_triggered" from="InputOutput/Output_1" to="InputOutput3" method="get_input"]
+[connection signal="output_triggered" from="InputOutput2/Output_0" to="InputOutput4" method="get_input"]
+[connection signal="output_triggered" from="InputOutput2/Output_1" to="InputOutput5" method="get_input"]
+[connection signal="output_triggered" from="InputOutput5/Output_0" to="InputOutput6" method="get_input"]

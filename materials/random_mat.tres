@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://7itundqx3fte"]
-
-[ext_resource type="Texture2D" uid="uid://bqq2pksw03b3r" path="res://addons/Level-Design-Logic/images/Random-Gizmo.svg" id="1_j4ku6"]
-
-[resource]
-transparency = 1
-albedo_texture = ExtResource("1_j4ku6")
-billboard_mode = 1
